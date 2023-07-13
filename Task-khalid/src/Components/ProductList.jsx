@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import axios from "axios"
+import './ProductList.css';
 
 export default function ProductList() {
     const [products, setProducts] = useState([]);
@@ -36,11 +37,11 @@ export default function ProductList() {
     }, []);
   
     if (loading) {
-      return <div style={{ color: "blue" }} >Loading...</div>;
+      return <div id = "loading">Loading...</div>;
     }
   
     if (error) {
-      return <div style={{ color: "red" }}>Error: {error}</div>;
+      return <div id = "error">Error: {error}</div>;
     }
 
     return (

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios"
+import './ImageGallery.css';
 
 export default function ImageGallery() {
     const [list, setList] = useState([]);
@@ -25,11 +26,11 @@ export default function ImageGallery() {
     }, []);
 
     if (loading) {
-      return <div style={{ color: "blue" }} >Loading...</div>;
+      return <div id = "loading">Loading...</div>;
     }
   
     if (error) {
-      return <div style={{ color: "red" }}>Error: {error}</div>;
+      return <div id = "error">Error: {error}</div>;
     }
 
   return (
